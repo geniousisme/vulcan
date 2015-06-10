@@ -41,5 +41,5 @@ class UrlCache(object):
     def insert(self,url):
         if isinstance(url,basestring):
             url = UrlData(url)
-        if url not in self.__url_cache:
+        if hash(url) not in self.__url_cache:
             self.__url_cache.setdefault(hash(url),url)
